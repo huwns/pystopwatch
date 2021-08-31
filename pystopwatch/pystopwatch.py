@@ -3,16 +3,16 @@
 time display format: hh:mm:ss.fff
 """
 
-import tkinter as tk 
+import tkinter as tk
 import time
 
 
-class Stopwatch():
+class Stopwatch:
     """GUI Stopwatch class
 
     simple usage: sw = Stopwatch(); sw.run()
-    """ 
-    
+    """
+
     def __init__(
         self,
         master=None,
@@ -29,7 +29,6 @@ class Stopwatch():
         self.stop_flag = stop_flag
         self.after_id = after_id
         self.stop_elapsed_time = stop_elapsed_time
-        
 
     def run(self):
         """run application method
@@ -50,17 +49,22 @@ class Stopwatch():
         )
         self.label.grid(row=0, column=0, columnspan=3)
 
-        start_button = tk.Button(self.app, text="START", font=("", 25, "bold"), command=self.start)
+        start_button = tk.Button(
+            self.app, text="START", font=("", 25, "bold"), command=self.start
+        )
         start_button.grid(row=1, column=0)
 
-        stop_button = tk.Button(self.app, text="STOP", font=("", 25, "bold"), command=self.stop)
+        stop_button = tk.Button(
+            self.app, text="STOP", font=("", 25, "bold"), command=self.stop
+        )
         stop_button.grid(row=1, column=1)
 
-        stop_button = tk.Button(self.app, text="CLEAR", font=("", 25, "bold"), command=self.clear)
+        stop_button = tk.Button(
+            self.app, text="CLEAR", font=("", 25, "bold"), command=self.clear
+        )
         stop_button.grid(row=1, column=2)
 
         self.app.mainloop()
-
 
     def update_time(self):
         """update time label method
@@ -74,22 +78,14 @@ class Stopwatch():
         now_time = time.time()
         elapsed_time = now_time - self.start_time
 
-        # [s] to [h]
-        eth = int(elapsed_time / 3600)
-        eth_remainder = elapsed_time % 3600
-
-        # [s] to [m]
-        etm = int(eth_remainder / 60)
-
-        # what's left at the end is [s]
-        ets = eth_remainder % 60
+        _minute, second = divmod(elapsed_time, 60)
+        hour, minute = divmod(_minute, 60)
 
         # change time display format to look like 00:00:00.000
-        elapsed_time_str = "{0:0=2}:{1:0=2}:{2:0=6.3f}".format(eth, etm, ets)
+        elapsed_time_str = "{0:0=2g}:{1:0=2g}:{2:0=6.3f}".format(hour, minute, second)
 
         # display time measurement result
         self.label.config(text=elapsed_time_str)
-
 
     def start(self):
         """start button method
@@ -108,7 +104,6 @@ class Stopwatch():
 
             # execute update_time method after interval[ms]
             self.after_id = self.app.after(self.interval, self.update_time)
-
 
     def stop(self):
         """stop button method
@@ -141,6 +136,7 @@ class Stopwatch():
 def main():
     sw = Stopwatch()
     sw.run()
+
 
 if __name__ == "__main__":
     main()

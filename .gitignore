@@ -1,4 +1,9 @@
 build/
 dist/
-pystopwatch.egg-info/
-pystopwatch/__pycache__/
+/pystopwatch.egg-info/
+/pystopwatch/__pycache__/
+/doc/make.bat
+/doc/Makefile
+/doc/source/_static/
+/doc/source/_templates/
+/images/
