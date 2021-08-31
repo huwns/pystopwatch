@@ -1,0 +1,4 @@
+build/
+dist/
+pystopwatch.egg-info/
+pystopwatch/__pycache__/
