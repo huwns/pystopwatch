@@ -15,7 +15,6 @@ class Stopwatch:
 
     def __init__(
         self,
-        master=None,
         interval=10,  # interval of refreshing time.[ms]
         start_time=0,
         start_flag=False,
@@ -29,6 +28,8 @@ class Stopwatch:
         self.stop_flag = stop_flag
         self.after_id = after_id
         self.stop_elapsed_time = stop_elapsed_time
+        self.app = None
+        self.label = None
 
     def run(self):
         """run application method
@@ -134,6 +135,7 @@ class Stopwatch:
 
 
 def main():
+    """main function"""
     sw = Stopwatch()
     sw.run()
 
