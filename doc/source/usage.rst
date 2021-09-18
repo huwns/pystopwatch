@@ -6,7 +6,8 @@ To get started right away, run the following command::
 
     pystopwatch
 
-You can run PyStopwatch as a package if running it as a script doesn't work:
+
+You can run PyStopwatch as a package if running it as a script doesn't work::
 
     python -m pystopwatch
 
