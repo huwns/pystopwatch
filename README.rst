@@ -14,6 +14,10 @@ PyStopwatch
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
+.. image:: https://img.shields.io/badge/security-bandit-yellow.svg
+    :target: https://github.com/PyCQA/bandit
+    :alt: Security Status
+
 PyStopwatch is a simple GUI stopwatch application.
 
 
@@ -28,14 +32,19 @@ __ https://pypi.org/project/pystopwatch/
 
 Usage
 =====
-Just run the application::
+To get started right away, run the following command::
+
+    pystopwatch
+
+
+You can run PyStopwatch as a package if running it as a script doesn't work::
 
     python -m pystopwatch
 
 
 Adjust the time interval[ms] and run the application::
 
-    python -m pystopwatch --interval=1
+    pystopwatch --interval=1
 
 
 Import the module and use it::
@@ -43,4 +52,3 @@ Import the module and use it::
     from pystopwatch import Stopwatch
     sw = Stopwatch()
     sw.run()
-
