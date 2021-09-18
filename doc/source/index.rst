@@ -14,6 +14,7 @@ PyStopwatch is a simple GUI stopwatch application.
    installation
    usage
    modules
+   graph
 
 
 Indices and tables
