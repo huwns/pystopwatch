@@ -1,0 +1,9 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"pystopwatch" [color="black", label="pystopwatch", shape="box", style="solid"];
+"pystopwatch.__main__" [color="black", label="pystopwatch.__main__", shape="box", style="solid"];
+"pystopwatch.pystopwatch" [color="black", label="pystopwatch.pystopwatch", shape="box", style="solid"];
+"pystopwatch" -> "pystopwatch" [arrowhead="open", arrowtail="none"];
+"pystopwatch.__main__" -> "pystopwatch" [arrowhead="open", arrowtail="none"];
+}

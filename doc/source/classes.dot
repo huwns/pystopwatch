@@ -1,0 +1,5 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"pystopwatch.pystopwatch.Stopwatch" [color="black", fontcolor="black", label="{Stopwatch|after_id : int, NoneType\lapp : Tk, NoneType\linterval : int\llabel : Label, NoneType\lstart_flag : bool\lstart_time : int\lstop_elapsed_time : int\lstop_flag : bool\l|clear()\lrun()\lstart()\lstop()\lupdate_time()\l}", shape="record", style="solid"];
+}
